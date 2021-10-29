@@ -9,7 +9,9 @@ const perPersonOutput = document.querySelector(".perPersonOutput");
 btnCheck.addEventListener("click",function checkOutPut(){
     var totalTip = (inputBill.value*inputTip.value)/100;
     totalTip=totalTip.toFixed(2);
+    const tipPerPerson = totalTip/inputCount.value;
     var perPerson = (inputBill.value)/inputCount.value;
-    tipOutput.innerText=("Total tip = "+totalTip);
-    perPersonOutput.innerText=("Per person bill = "+perPerson);
+    perPerson=perPerson+tipPerPerson;
+    tipOutput.innerText=("Total tip = "+totalTip+"\n Tip per person = "+tipPerPerson.toFixed(2));
+    perPersonOutput.innerText=("Per person bill = "+perPerson.toFixed(2));
 })
