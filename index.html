@@ -10,27 +10,40 @@
 </head>
 
 <body>
+    <h1 class="heading">TIP CALCULATION IS FUN!</h1>
     <section>
-        <h1 class="heading">TIP CALCULATION IS FUN!</h1>
+        <div class="boxInput">
 
-        <label for="inputBill"> BILL </label>
-        <input id="inputBill" type="text"><br />
-        <div class="billError"></div>
+            <div>
+                <label for="inputBill"> Bill </label><br>
+                <input id="inputBill" type="text"><br />
 
-        <label for="inputTip">Tip %</label>
-        <input id="inputTip" type="number"> <br />
-        <div class="tipError"></div>
 
-        <label for="inputCount">number of people</label>
-        <input id="inputCount" type="number"> <br />
-        <div class="countError"></div>
+                <label for="inputTip">Tip %</label><br>
+                <button class="plus">+</button>
+                <input id="inputTip" type="text">
+                <button class="minus">-</button>
+                <br />
 
-        <button class="check">Check</button>
+
+                <label for="inputCount">Number of people</label><br>
+                <button class="plus">+</button>
+                <input id="inputCount" type="text">
+                <button class="minus">-</button>
+                <br />
+            </div>
+
+
+            
+        </div>
+        
+        <div class="boxOutput">
+            <div class="errorHere">ERRORRR</div>
+            <div class="tipOutput"> OUTPUT TIP</div>
+            <div class="perPersonOutput">OUTPUT</div>
+        </div>
     </section>
-    <div>
-        <div class="tipOutput"></div>
-        <div class="perPersonOutput"></div>
-    </div>
+    <button class="check">Check</button>
 
     <script src="index.js"></script>
 </body>
