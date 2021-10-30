@@ -3,13 +3,38 @@ const inputTip = document.querySelector("#inputTip");
 const inputCount = document.querySelector("#inputCount");
 const btnCheck = document.querySelector(".check");
 const boxOutput = document.querySelector(".boxOutput");
+const btnPlusTip = document.querySelector(".plusTip");
+const btnMinusTip = document.querySelector(".minusTip");
+const btnPlusCount = document.querySelector(".plusCount");
+const btnMinusCount = document.querySelector(".minusCount");
 
 
+btnMinusCount.addEventListener("click", function minusMyCount()
+{
+    let x = parseInt(inputCount.value);
+    inputCount.value=(x - 1);
+})
+btnPlusCount.addEventListener("click", function plusMyCount()
+{
+    let x = parseInt(inputCount.value);
+    inputCount.value=(x + 1);
+})
+btnMinusTip.addEventListener("click", function minusMyCount()
+{
+    
+    let x = parseInt(inputTip.value);
+    inputTip.value=(x - 5);
+})
+btnPlusTip.addEventListener("click", function minusMyCount()
+{
+    
+    let x = parseInt(inputTip.value);
+    inputTip.value=(x + 5);
+})
 btnCheck.addEventListener("click", function checkOutPut() {
-    const bill =parseInt(inputBill.value);
-    const tip = parseInt(inputTip.value);
-    const count= parseInt(inputCount.value);
-    console.log(bill,tip,count);
+    var bill =parseInt(inputBill.value);
+    var tip = parseInt(inputTip.value);
+    var count= parseInt(inputCount.value);
     if (validate(bill, tip, count))
         calculateTip(bill, tip, count);
 
