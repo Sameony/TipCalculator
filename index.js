@@ -4,48 +4,55 @@ const inputCount = document.querySelector("#inputCount");
 const btnCheck = document.querySelector(".check");
 const tipOutput = document.querySelector(".tipOutput");
 const perPersonOutput = document.querySelector(".perPersonOutput");
-const billError = document.querySelector(".billError");
-const tipError = document.querySelector(".tipError");
-const countError = document.querySelector(".countError");
+const boxOutput = document.querySelector(".boxOutput");
 
 
-function validate(input) {
-    if(isNaN(input))
-        return ("Please Enter a valid numerical value.");
-    else if(input<0)
-        return ("This field cannot contain negative value.");
-    else if(input==="")
-        return ("Do not leave this field empty.");    
+btnCheck.addEventListener("click",function checkOutPut(){
+    const bill = inputBill.value;
+    const tip = inputTip.value;
+    const count = inputCount.value;
+    if(validate(bill, tip, count))
+        calculateTip(bill, tip, count);
     
+})
+
+function validate(bill, tip, count)
+{
+    if(isNaN(bill) || isNaN(tip) || isNaN(count))
+    {
+        boxOutput.innerText=("Please Enter Valid numerical Inputs in the field.");
+        return false;
+    }
+    else if(bill==="" || tip==="" || count==="")
+    {
+        boxOutput.innerText=("Please Enter Some values for us to work on.");
+        return false;
+    }
+    else if(count<0 || bill<0 || tip<0)
+    {
+        boxOutput.innerText=("We believe these values cannot be negative.");
+        return false;
+    }
+    else if(count===0 || bill===0)
+    {
+        boxOutput.innerText=("You can neither have zero bill nor have zero people to pay the bill.");
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
-inputBill.addEventListener("change",()=>{
-    let x = validate(inputBill.value);
-    if(x != undefined)
-        billError.innerText=(x);
-    else
-        billError.innerText="";
-})
-inputCount.addEventListener("change",()=>{
-    let x = validate(inputCount.value);
-    if(x != undefined)
-        countError.innerText=(x);
-    else
-        countError.innerText="";
-})
-inputTip.addEventListener("change",()=>{
-    let x = validate(inputTip.value);
-    if(x != undefined)
-        tipError.innerText=(x);
-    else
-        tipError.innerText="";
-})
-btnCheck.addEventListener("click",function checkOutPut(){
-    var totalTip = (inputBill.value*inputTip.value)/100;
+
+function calculateTip(bill, tip, count)
+{
+        var totalTip = (bill*tip)/100;
     totalTip=totalTip.toFixed(2);
-    const tipPerPerson = totalTip/inputCount.value;
-    var perPerson = (inputBill.value)/inputCount.value;
+    const tipPerPerson = totalTip/count;
+    var perPerson = (bill)/count;
     perPerson=perPerson+tipPerPerson;
-    tipOutput.innerText=("Total tip = "+totalTip+"\n Tip per person = "+tipPerPerson.toFixed(2));
+    tipOutput.innerText=("Total tip = "+
+    totalTip+"\n Tip per person = "+tipPerPerson.toFixed(2));
     perPersonOutput.innerText=("Per person bill = "+perPerson.toFixed(2));
-})
+}
