@@ -2,7 +2,11 @@ section{
     display: flex;
     flex-direction: row;
 }
-
+button{
+    cursor: pointer;
+    transition: ease-in;
+    transition-delay: 0.5s;
+}
 .boxInput{
     min-width: 15rem;
     padding: 2rem;
