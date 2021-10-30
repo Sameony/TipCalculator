@@ -4,11 +4,13 @@ section{
 }
 
 .boxInput{
+    min-width: 15rem;
     padding: 2rem;
     border: 1px solid grey;
 }
 
-.boxError, .boxOutput{
+.boxOutput{
     padding: 2rem;
+    max-width: 20rem;
     border: 1px solid grey;
 }
