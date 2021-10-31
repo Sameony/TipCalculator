@@ -2,10 +2,32 @@ section{
     display: flex;
     flex-direction: row;
 }
-button{
+input{
+    padding: 0.3rem 1rem;
+    font-size: large;
+    width: 8rem;
+}
+#inputBill{
+    width: 12rem;
+}
+button {
+    background-image: linear-gradient(#FFFFFF, #C1C5CC);
+    font-size:20px;
+    font-weight: 100;
+    padding: 4px 8.5px;
+    border: solid #000000 1px;
+    display: inline-block;
     cursor: pointer;
-    transition: ease-in;
-    transition-delay: 0.5s;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0.5;
+ }
+ 
+button:hover {
+    opacity: 1;
+ }
+.check{
+    opacity: 1;
 }
 .boxInput{
     min-width: 15rem;
