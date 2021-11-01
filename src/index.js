@@ -52,14 +52,17 @@ inputTip.addEventListener("change", function limitMyTip() {
 })
 
 function validate(bill, tip, count) {
-    if (isNaN(bill) || isNaN(tip) || isNaN(count)) {
+    if (isNaN(bill) || isNaN(tip) || isNaN(count)) { //input should be a number
         boxOutput.innerText = ("Please Enter Valid numerical Inputs in all input fields.");
         return false;
-    } else if (count < 0 || bill < 0 || tip < 0) {
+    } else if (count < 0 || bill < 0 || tip < 0) { //non negative number
         boxOutput.innerText = ("We believe these values cannot be negative.");
         return false;
-    } else if (count === 0 || bill === 0) {
+    } else if (count === 0 || bill === 0) { //bill value and number of people cannot be zero
         boxOutput.innerText = ("You can neither have zero bill nor have zero people to pay the bill.");
+        return false;
+    } else if(count%1!=0){
+        boxOutput.innerText=("Please enter whole number for count of people.")
         return false;
     } else {
         return true;
