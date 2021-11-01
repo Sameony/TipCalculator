@@ -12,7 +12,7 @@ const btnMinusCount = document.querySelector(".minusCount");
 //Buttons to add/subtract the value of tip and count of head
 btnMinusCount.addEventListener("click", function minusMyCount() {
     let x = parseInt(inputCount.value);
-    if(inputCount.value!=0)
+    if (inputCount.value != 0)
         inputCount.value = (x - 1);
 })
 btnPlusCount.addEventListener("click", function plusMyCount() {
@@ -22,16 +22,16 @@ btnPlusCount.addEventListener("click", function plusMyCount() {
 btnMinusTip.addEventListener("click", function minusMyTip() {
 
     let x = parseInt(inputTip.value);
-    if(inputTip.value!=0)
+    if (inputTip.value != 0)
         inputTip.value = (x - 5);
 })
 btnPlusTip.addEventListener("click", function plusMyTip() {
 
     let x = parseInt(inputTip.value);
-    if(inputTip.value>=45)
+    if (inputTip.value >= 45)
         inputTip.value = 50;
-    else{
-        inputTip.value= x+5;
+    else {
+        inputTip.value = x + 5;
     }
 })
 
@@ -46,6 +46,11 @@ btnCalculate.addEventListener("click", function calculateOutPut() {
 
 })
 //validate input
+inputTip.addEventListener("change", function limitMyTip() {
+    if (inputTip.value >= 50)
+        inputTip.value = 50;
+})
+
 function validate(bill, tip, count) {
     if (isNaN(bill) || isNaN(tip) || isNaN(count)) {
         boxOutput.innerText = ("Please Enter Valid numerical Inputs in all input fields.");
