@@ -61,7 +61,7 @@ function validate(bill, tip, count) {
     } else if (count === 0 || bill === 0) { //bill value and number of people cannot be zero
         boxOutput.innerText = ("You can neither have zero bill nor have zero people to pay the bill.");
         return false;
-    } else if(count%1!=0){
+    } else if(count%1!=0){ //whole Number check for count of people
         boxOutput.innerText=("Please enter whole number for count of people.")
         return false;
     } else {
