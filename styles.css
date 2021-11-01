@@ -1,14 +1,38 @@
-section{
-    display: flex;
-    flex-direction: row;
+body{
+    text-align: center;
+    background-image: url("/bg.png");
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: center;
+    background-position-y: 0;
+    padding: 2rem;
+    
+}
+.container{
+    text-align: left;
+    color: white;
+    padding: 2rem;
+    display: block;
+    width: 21rem;
+    margin: auto;
+    margin-top: 7rem;
+}
+.boxOutput{
+    margin-top: 4.5rem;
+    text-align: center;
 }
 input{
     padding: 0.3rem 1rem;
     font-size: large;
-    width: 8rem;
+    width: 14rem;
+}
+#inputCount, #inputTip{
+   margin:5px 0;
 }
 #inputBill{
-    width: 12rem;
+    width: 18rem;
+    margin: 15px;
+    margin-left: 0;
 }
 button {
     background-image: linear-gradient(#FFFFFF, #C1C5CC);
@@ -21,22 +45,16 @@ button {
     text-align: center;
     transition: 0.5s;
     opacity: 0.5;
+    margin-top: 0.5rem;
  }
  
 button:hover {
     opacity: 1;
  }
+ .minusCount, .minusTip{
+     padding: 4px 9.5px;
+ }
 .check{
     opacity: 1;
-}
-.boxInput{
-    min-width: 15rem;
-    padding: 2rem;
-    border: 1px solid grey;
-}
-
-.boxOutput{
-    padding: 2rem;
-    max-width: 20rem;
-    border: 1px solid grey;
+    margin-top: 1px;
 }
