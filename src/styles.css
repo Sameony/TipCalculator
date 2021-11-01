@@ -1,4 +1,8 @@
+/* Font import */
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* Background Image and text alignments */
 body{
     text-align: center;
     background-image: url("/images/background.png");
@@ -19,23 +23,31 @@ body{
     margin: auto;
     margin-top: 7rem;
 }
-.boxOutput{
-    margin-top: 4.5rem;
-    text-align: center;
-}
+
+/* Input fields */
+
 input{
     padding: 0.3rem 1rem;
     font-size: large;
     width: 14rem;
 }
+
 #inputCount, #inputTip{
    margin:5px 0;
 }
+
 #inputBill{
     width: 18rem;
     margin: 15px;
     margin-left: 0;
 }
+
+.boxOutput{
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+/* customized buttons and alignments */
 button {
     background-image: linear-gradient(#FFFFFF, #C1C5CC);
     font-size:20px;
@@ -53,10 +65,12 @@ button {
 button:hover {
     opacity: 1;
  }
+
  .minusCount, .minusTip{
      padding: 4px 9.5px;
  }
-.check{
+
+.calculate{
     opacity: 1;
     margin-top: 1px;
 }
