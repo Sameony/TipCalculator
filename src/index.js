@@ -2,7 +2,7 @@
 const inputBill = document.querySelector("#inputBill");
 const inputTip = document.querySelector("#inputTip");
 const inputCount = document.querySelector("#inputCount");
-const btnCheck = document.querySelector(".check");
+const btnCalculate = document.querySelector(".calculate");
 const boxOutput = document.querySelector(".boxOutput");
 const btnPlusTip = document.querySelector(".plusTip");
 const btnMinusTip = document.querySelector(".minusTip");
@@ -12,25 +12,32 @@ const btnMinusCount = document.querySelector(".minusCount");
 //Buttons to add/subtract the value of tip and count of head
 btnMinusCount.addEventListener("click", function minusMyCount() {
     let x = parseInt(inputCount.value);
-    inputCount.value = (x - 1);
+    if(inputCount.value!=0)
+        inputCount.value = (x - 1);
 })
 btnPlusCount.addEventListener("click", function plusMyCount() {
     let x = parseInt(inputCount.value);
     inputCount.value = (x + 1);
 })
-btnMinusTip.addEventListener("click", function minusMyCount() {
+btnMinusTip.addEventListener("click", function minusMyTip() {
 
     let x = parseInt(inputTip.value);
-    inputTip.value = (x - 5);
+    if(inputTip.value!=0)
+        inputTip.value = (x - 5);
 })
-btnPlusTip.addEventListener("click", function minusMyCount() {
+btnPlusTip.addEventListener("click", function plusMyTip() {
 
     let x = parseInt(inputTip.value);
-    inputTip.value = (x + 5);
+    if(inputTip.value>=45)
+        inputTip.value = 50;
+    else{
+        inputTip.value= x+5;
+    }
 })
+
 
 //Driver button that calculates the tip after validating input
-btnCheck.addEventListener("click", function checkOutPut() {
+btnCalculate.addEventListener("click", function calculateOutPut() {
     var bill = parseInt(inputBill.value);
     var tip = parseInt(inputTip.value);
     var count = parseInt(inputCount.value);
